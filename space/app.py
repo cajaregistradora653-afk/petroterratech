@@ -15,6 +15,17 @@ NAMES = MODEL.names  # {id: mineral}
 
 @spaces.GPU(duration=60)
 def predict(img: Image.Image, conf: float):
+    try:
+        return _predict(img, conf)
+    except Exception as e:
+        import traceback
+        err = f"{type(e).__name__}: {e}\n{traceback.format_exc(limit=8)}"
+        blank = img.convert("RGB") if img is not None else Image.new("RGB", (64, 64))
+        return blank, json.dumps([{"class": "ERROR", "confidence": 0.0,
+                                   "polygon": [], "detail": err}])
+
+
+def _predict(img: Image.Image, conf: float):
     if img is None:
         return None, "[]"
     if img.mode != "RGB":
