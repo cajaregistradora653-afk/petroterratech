@@ -1,0 +1,48 @@
+Sodalita_PPL
+Sodalita_XPL
+nefelina_PPL
+nefelina_XPL
+Cancrinita_PPL
+Cancrinita_XPL
+Plagioclasa_PPL
+Plagioclasa_XPL
+Calcita_PPL
+Calcita_XPL
+Ortopiroxeno_PPL
+Ortopiroxeno_XPL
+Mineral opaco_PPL
+Mineral opaco_XPL
+Cuarzo_PPL
+Cuarzo_XPL
+Flogopita_PPL
+Flogopita_XPL
+Piroxeno_PPL
+Piroxeno_XPL
+Ortoclasa_PPL
+Ortoclasa_XPL
+Antipertita_PPL
+Antipertita_XPL
+Hornblenda_PPL
+Hornblenda_XPL
+Aegirina_PPL
+Aegirina_XPL
+Olivino alterado con serpentina_PPL
+Olivino alterado con serpentina_XPL
+Clinopiroxeno_PPL
+Clinopiroxeno_XPL
+Olivino_PPL
+Olivino_XPL
+Anfibol_PPL
+Anfibol_XPL
+Arfvedsonita_PPL
+Arfvedsonita_XPL
+Eudialita_PPL
+Eudialita_XPL
+Rusenbuschita_PPL
+Rusenbuschita_XPL
+Ilmenita_PPL
+Ilmenita_XPL
+Turmalina_PPL
+Turmalina_XPL
+Venas de serpentina_PPL
+Venas de serpentina_XPL

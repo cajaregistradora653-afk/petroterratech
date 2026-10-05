@@ -1,0 +1,19 @@
+.env
+__pycache__/
+*.pyc
+outputs/
+*.jpg
+*.jpeg
+*.png
+.venv/
+venv/
+# artefactos pesados/regenerables (no subir)
+/raw_strekeisen/html_cache/
+/raw_strekeisen/uploaded*.log
+/preannot/
+/annot_v1/
+/annot_yolo/
+/web_model/
+/logs/
+\
+.firebase/\

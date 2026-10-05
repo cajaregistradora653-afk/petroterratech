@@ -1,0 +1,10 @@
+roboflow>=1.6.1
+inference-sdk>=0.30
+supervision>=0.26
+pillow>=10.0
+opencv-python>=4.8
+python-dotenv>=1.0
+numpy>=1.24
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
