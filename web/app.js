@@ -1,30 +1,28 @@
 import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client@1.9.4/dist/index.js";
 
 const $ = (id) => document.getElementById(id);
-const spaceInput = $("spaceUrl"), connStatus = $("connStatus");
+const connStatus = $("connStatus");
 const fileInput = $("fileInput"), btnGo = $("btnGo"), conf = $("conf");
+const SPACE_URL = "https://nicolasvillamilsanchez-petroterratech.hf.space";
 let client = null, fileBlob = null;
 
-spaceInput.value = localStorage.getItem("pt_space") || "";
 conf.oninput = () => ($("confVal").textContent = conf.value);
 
-$("btnConnect").onclick = async () => {
-  const url = spaceInput.value.trim().replace(/\/$/, "");
-  if (!url) return;
+async function connect() {
   connStatus.textContent = "conectando…";
   try {
-    client = await Client.connect(url);
-    localStorage.setItem("pt_space", url);
+    client = await Client.connect(SPACE_URL);
     connStatus.textContent = "conectado";
     connStatus.className = "status ok";
     btnGo.disabled = !fileBlob;
   } catch (e) {
-    connStatus.textContent = "falló: " + (e.message || e);
+    connStatus.textContent = "sin conexión, reintentando…";
     connStatus.className = "status bad";
     client = null;
+    setTimeout(connect, 8000);
   }
-};
-if (spaceInput.value) $("btnConnect").click();
+}
+connect();
 
 function setFile(f) {
   if (!f || !f.type.startsWith("image/")) return;
