@@ -5,6 +5,7 @@ import io
 import json
 
 import gradio as gr
+import spaces
 from PIL import Image
 from ultralytics import YOLO
 
@@ -12,6 +13,7 @@ MODEL = YOLO("weights.pt")
 NAMES = MODEL.names  # {id: mineral}
 
 
+@spaces.GPU(duration=60)
 def predict(img: Image.Image, conf: float):
     if img is None:
         return None, "[]"
