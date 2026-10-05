@@ -4,6 +4,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); col
 header { padding: 1.5rem; text-align: center; background: linear-gradient(120deg, #1a2230, #0c2b33); }
 header h1 { margin: 0; letter-spacing: 1px; }
 header p { opacity: .8; font-size: .9rem; }
+.scope { background: #3a2b00; border: 1px solid #a97b00; border-radius: 8px; padding: .5rem .8rem; display: inline-block; }
 main { max-width: 960px; margin: auto; padding: 1rem; display: grid; gap: 1rem; }
 .card { background: var(--card); border-radius: 12px; padding: 1rem 1.2rem; }
 .card h2 { margin-top: 0; font-size: 1.05rem; }
