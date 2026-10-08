@@ -9,7 +9,7 @@
 <body>
 <header>
   <h1>PetroTerratech</h1>
-  <p>Identificación de minerales en sección delgada · YOLOv8n-seg 24 clases · <strong>demo v1</strong> (mAP50 22.7% — resultados parciales, en mejora activa)</p>
+  <p>Identificación de minerales en sección delgada · YOLOv8s-seg 23 clases · <strong>modelo v2</strong> (mAP50 67.4% — demo en mejora activa)</p>
   <p class="scope">⚠️ Alcance actual: solo <strong>rocas plutónicas</strong> (gabro, dunita, norita, troctolita y afines). Volcánicas, metamórficas y sedimentarias llegan en v2.</p>
 </header>
 
@@ -19,7 +19,7 @@
     <div class="row">
       <input id="fileInput" type="file" accept="image/*">
       <label>Confianza <input id="conf" type="range" min="0.05" max="0.9" step="0.05" value="0.25"> <span id="confVal">0.25</span></label>
-      <button id="btnGo" disabled>Identificar minerales</button>
+      <button id="btnGo">Identificar minerales</button>
     </div>
     <div id="drop">Arrastra una foto aquí o usa el selector</div>
   </section>
@@ -29,13 +29,22 @@
     <div id="chips"></div>
     <div class="imgs">
       <figure><figcaption>Original</figcaption><img id="imgOrig" alt="original"></figure>
-      <figure><figcaption>Anotada</figcaption><img id="imgAnn" alt="anotada"></figure>
+      <figure><figcaption>Anotada</figcaption><canvas id="canvasOut"></canvas></figure>
     </div>
-    <details><summary>JSON crudo</summary><pre id="rawJson"></pre></details>
+    <details open><summary>JSON crudo</summary><pre id="rawJson"></pre></details>
+  </section>
+
+  <section class="card">
+    <h2>Depuración</h2>
+    <div class="row">
+      <button id="btnClear">Limpiar</button>
+      <button id="btnCopy">Copiar log</button>
+    </div>
+    <pre id="debugLog">— log listo —</pre>
   </section>
 </main>
 
 <footer>Demo educativa v1 · Fotos: Alex Strekeisen (con permiso, uso no comercial) · Modelo entrenado en Roboflow</footer>
-<script type="module" src="app.js"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

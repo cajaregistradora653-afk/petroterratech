@@ -1,0 +1,7 @@
+name = "petroterratech"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+# Versión del dataset/entrenamiento en Roboflow (petroterratech). v2 = yolov8s-seg 23 clases.
+MODEL_VERSION = "2"

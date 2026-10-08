@@ -13,7 +13,7 @@ MODEL = YOLO("weights.pt")
 NAMES = MODEL.names  # {id: mineral}
 
 
-@spaces.GPU(duration=60)
+@spaces.GPU(duration=15)
 def predict(img: Image.Image, conf: float):
     try:
         return _predict(img, conf)
@@ -30,7 +30,7 @@ def _predict(img: Image.Image, conf: float):
         return None, "[]"
     if img.mode != "RGB":
         img = img.convert("RGB")
-    r = MODEL.predict(img, conf=float(conf), imgsz=640, verbose=False)[0]
+    r = MODEL.predict(img, conf=float(conf), imgsz=512, verbose=False)[0]
     dets = []
     if r.masks is not None and r.boxes is not None:
         W, H = img.size
@@ -52,7 +52,7 @@ demo = gr.Interface(
     outputs=[gr.Image(label="Minerales detectados"),
              gr.Textbox(label="Detecciones JSON")],
     title="PetroTerratech - Identificacion de minerales en seccion delgada (demo v1)",
-    description="YOLOv8n-seg 24 clases. Modelo v1 en entrenamiento activo: resultados parciales.",
+    description="YOLOv8s-seg 23 clases. Modelo v2 en mejora activa: solo rocas plutonicas.",
     api_name="predict",
 )
-demo.launch()
+demo.launch(show_error=True)
